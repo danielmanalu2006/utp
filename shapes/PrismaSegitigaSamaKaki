@@ -1,0 +1,36 @@
+package utp.shapes;
+
+public class PrismaSegitigaSamaKaki extends BangunRuang {
+    private double alas;
+    private double kaki;
+
+    public PrismaSegitigaSamaKaki(double alas, double kaki, double tinggi) {
+        this.alas = alas;
+        this.kaki = kaki;
+        setTinggi(tinggi);
+        setNama("Prisma Segitiga Sama Kaki");
+    }
+
+    private double getTinggiAlas() {
+        return Math.sqrt(Math.pow(kaki, 2) - Math.pow(alas/2, 2));
+    }
+
+    private double getLuasAlas() {
+        // Perbaikan: Hitung luas segitiga, bukan rekursi
+        return (alas * getTinggiAlas()) / 2;
+    }
+
+    private double getKeliling() {
+        return 2 * kaki + alas;
+    }
+
+    @Override
+    protected double getLuasPermukaan() {
+        return 2 * getLuasAlas() + getKeliling() * getTinggi();
+    }
+
+    @Override
+    protected double getVolume() {
+        return getLuasAlas() * getTinggi();
+    }
+}
