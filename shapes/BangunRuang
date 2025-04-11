@@ -1,0 +1,36 @@
+package utp.shapes;
+
+public abstract class BangunRuang {
+    private String nama;
+    private double tinggi;
+
+    public BangunRuang() {
+        this.nama = "";
+        this.tinggi = 0;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getNama() {
+        return this.nama;
+    }
+
+    public void setTinggi(double inputTinggi) {
+        this.tinggi = inputTinggi;
+    }
+
+    public double getTinggi() {
+        return this.tinggi;
+    }
+
+    protected abstract double getLuasPermukaan();
+    protected abstract double getVolume();
+
+    public void printInfo() {
+        System.out.println("Nama : " + this.nama);
+        System.out.println("Luas Permukaan : " + this.getLuasPermukaan());
+        System.out.println("Volume : " + this.getVolume());
+    }
+}
