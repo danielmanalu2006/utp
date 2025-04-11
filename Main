@@ -1,0 +1,72 @@
+import utp.shapes.PrismaSegitigaSamaKaki;
+import utp.shapes.LimasPersegi;
+import utp.shapes.Tabung;
+import java.util.Scanner;
+
+/*
+DANIEL SMITE MANALU - 245150701111018
+
+______  ___   _   _ _____ _____ _
+|  _  \/ _ \ | \ | |_   _|  ___| |
+| | | / /_\ \|  \| | | | | |__ | |
+| | | |  _  || . ` | | | |  __|| |
+| |/ /| | | || |\  |_| |_| |___| |____
+|___/ \_| |_/\_| \_/\___/\____/\_____/
+ */
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner niel = new Scanner(System.in);
+
+        System.out.println("===============================================================");
+        System.out.println("Kalkulator Bangun Ruang");
+        System.out.println("DANIEL SMITE MANALU");
+        System.out.println("245150701111018");
+        System.out.println("===============================================================");
+
+        //prismasegitiga
+        System.out.println("Prisma Segitiga Sama Kaki");
+        System.out.println("===============================================================");
+        System.out.print("Isikan alas : ");
+        double alas = niel.nextDouble();
+        System.out.print("Isikan kaki : ");
+        double kaki = niel.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiPrisma = niel.nextDouble();
+
+        PrismaSegitigaSamaKaki prisma = new PrismaSegitigaSamaKaki(alas, kaki, tinggiPrisma);
+        System.out.println("===============================================================");
+        prisma.printInfo();
+        System.out.println("===============================================================");
+
+        //limaspersegi
+        System.out.println("Limas Persegi");
+        System.out.println("===============================================================");
+        System.out.print("Isikan sisi : ");
+        double sisi = niel.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiLimas = niel.nextDouble();
+
+        LimasPersegi limas = new LimasPersegi(sisi, tinggiLimas);
+        System.out.println("===============================================================");
+        limas.printInfo();
+        System.out.println("===============================================================");
+
+        //tabung
+        System.out.println("Tabung");
+        System.out.println("===============================================================");
+        System.out.print("Isikan Radius: ");
+        double radius = niel.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiTabung = niel.nextDouble();
+
+        Tabung tabung = new Tabung();
+        tabung.setRadius(radius);
+        tabung.setTinggi(tinggiTabung);
+        System.out.println("===============================================================");
+        tabung.printInfo();
+        System.out.println("===============================================================");
+
+        niel.close();
+    }
+}
